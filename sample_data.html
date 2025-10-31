@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dedfw01 - Data Domain Autosupport Report</title>
+    <style>
+        /* Cohesity official green palette */
+        :root {
+            --brand-green: #00DD68; /* official Cohesity green */
+            --brand-green-dark: #00b355;
+            --surface: #ffffff;
+            --muted: #e6eef0;
+            --text: #0f172a;
+            --subtle: #475569;
+        }
+        body {
+            font-family: 'Inter', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f7faf8 0%, #eef6f1 100%);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: var(--surface);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.06);
+            border: 1px solid var(--muted);
+        }
+        h1 {
+            color: var(--text);
+            text-align: center;
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        /* make the first letter of the host name the green accent to mimic the brand mark */
+        h1 .host::first-letter {
+            color: var(--brand-green);
+            font-weight: 800;
+        }
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--brand-green) 0%, var(--brand-green-dark) 100%);
+            border-radius: 2px;
+        }
+        h2 {
+            color: var(--text);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding: 12px 20px;
+            background: linear-gradient(90deg, #f6fbf8 0%, #eef6f1 100%);
+            border-left: 5px solid var(--brand-green);
+            border-radius: 0 8px 8px 0;
+        }
+        h3 {
+            color: #334155;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #eef6f1;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+            background-color: var(--surface);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            border: 1px solid var(--muted);
+        }
+        th {
+            background: var(--brand-green);
+            color: #ffffff;
+            padding: 16px 12px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+        }
+        td.label {
+            background-color: #fbfdfb;
+            font-weight: 600;
+            text-align: left;
+            padding: 14px 16px;
+            border: 1px solid var(--muted);
+            color: var(--subtle);
+            width: 220px;
+        }
+        td.value {
+            text-align: right;
+            padding: 14px 16px;
+            border: 1px solid var(--muted);
+            color: var(--text);
+            font-weight: 500;
+        }
+        tr:nth-child(even) {
+            background-color: #f6fbf8;
+        }
+        tr:hover {
+            background-color: #e8f9ee;
+            transform: translateY(-1px);
+            transition: all 0.2s ease;
+        }
+        .entry-separator {
+            margin: 50px 0;
+            border-top: 3px solid var(--brand-green);
+            padding-top: 30px;
+            position: relative;
+        }
+        .entry-separator::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--brand-green) 50%, transparent 100%);
+        }
+        .note {
+            background: linear-gradient(135deg, #f0fff4 0%, #dcffe8 100%);
+            border: 1px solid #7dd48b;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #04512b;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(34,197,94,0.06);
+        }
+        .note::before {
+            content: '💡';
+            position: absolute;
+            left: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--brand-green);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #0f172a 0%, #071017 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 16px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><span class="host">dedfw01</span> <span class="separator">—</span> <span class="title-text">Data Domain Autosupport Report</span></h1>
+<h3>System Information</h3><table><tr><td class="label">GENERATED_ON</td><td class="value">Mon Oct 28 14:30:15 CDT 2024</td></tr><tr><td class="label">SYSTEM_SERIALNO</td><td class="value">APM01234567890</td></tr><tr><td class="label">DELL_SERVICETAG</td><td class="value">DFW1234</td></tr><tr><td class="label">MODEL_NO</td><td class="value">DD9900</td></tr><tr><td class="label">HOSTNAME</td><td class="value">dedfw01.company.local</td></tr><tr><td class="label">LOCATION</td><td class="value">Dallas Data Center - 123 Main St Dallas TX 75201</td></tr></table><h3>Services Status</h3><table><tr><td class="label">NFS</td><td class="value">Enabled</td></tr><tr><td class="label">CIFS</td><td class="value">Disabled</td></tr><tr><td class="label">NDMP</td><td class="value">Disabled</td></tr><tr><td class="label">CLOUD_TIER</td><td class="value">Enabled</td></tr><tr><td class="label">REPLICATION</td><td class="value">Enabled</td></tr></table><div class="section-header">STORAGE USAGE</div><h3>Active Tier</h3><table><tr><th>Resource</th><th>Size GiB</th><th>Used GiB</th><th>Avail GiB</th><th>Use%</th><th>Cleanable GiB</th></tr><tr><td class="label">/data: pre-comp</td><td class="value">-</td><td class="value">21820046.0</td><td class="value">-</td><td class="value">-</td><td class="value">-</td></tr><tr><td class="label">/data: post-comp</td><td class="value">1131781.2</td><td class="value">942615.2</td><td class="value">189166.0</td><td class="value">83%</td><td class="value">24814.4</td></tr><tr><td class="label">/ddvar</td><td class="value">49.1</td><td class="value">15.7</td><td class="value">30.9</td><td class="value">34%</td><td class="value">-</td></tr><tr><td class="label">/ddvar/core</td><td class="value">1215.2</td><td class="value">3.3</td><td class="value">1150.2</td><td class="value">0%</td><td class="value">-</td></tr></table><div class="note">* Estimated based on last cleaning of 2025/10/15 07:05:59.</div><h3>Cloud Tier</h3><table><tr><th>Resource</th><th>Size GiB</th><th>Used GiB</th><th>Avail GiB</th><th>Use%</th><th>Cleanable GiB</th></tr><tr><td class="label">/data: pre-comp</td><td class="value">-</td><td class="value">4802986.5</td><td class="value">-</td><td class="value">-</td><td class="value">-</td></tr><tr><td class="label">/data: post-comp</td><td class="value">744962.4</td><td class="value">515869.3</td><td class="value">229093.1</td><td class="value">69%</td><td class="value">7.9</td></tr></table><div class="note">* Post-comp size is based on CLOUDTIER-CAPACITY license and might not be same as the cloud storage.</div><h3>Total</h3><table><tr><th>Resource</th><th>Size GiB</th><th>Used GiB</th><th>Avail GiB</th><th>Use%</th><th>Cleanable GiB</th></tr><tr><td class="label">/data: pre-comp</td><td class="value">-</td><td class="value">26623032.0</td><td class="value">-</td><td class="value">-</td><td class="value">-</td></tr><tr><td class="label">/data: post-comp</td><td class="value">1876743.6</td><td class="value">1458484.6</td><td class="value">418259.0</td><td class="value">78%</td><td class="value">24822.3</td></tr><tr><td class="label">/ddvar</td><td class="value">49.1</td><td class="value">15.7</td><td class="value">30.9</td><td class="value">34%</td><td class="value">-</td></tr><tr><td class="label">/ddvar/core</td><td class="value">1215.2</td><td class="value">3.3</td><td class="value">1150.2</td><td class="value">0%</td><td class="value">-</td></tr><tr><td class="label">/data: pre-comp</td><td class="value">-</td><td class="value">4802986.5</td><td class="value">-</td><td class="value">-</td><td class="value">-</td></tr><tr><td class="label">/data: post-comp</td><td class="value">744962.4</td><td class="value">515869.3</td><td class="value">229093.1</td><td class="value">69%</td><td class="value">7.9</td></tr><tr><td class="label">/data: licensed</td><td class="value">745058.1</td><td class="value">-</td><td class="value">-</td><td class="value">-</td><td class="value">-</td></tr></table><div class="note">* Total CLOUDTIER-CAPACITY usage can not exceed the CLOUDTIER-CAPACITY license.</div><h3>Active Tier Compression Stats</h3><table><tr><th>Metric</th><th>Pre-Comp GiB</th><th>Post-Comp GiB</th><th>Global-Comp Factor</th><th>Local-Comp Factor</th><th>Total-Comp Factor</th></tr><tr><td class="label">Currently Used</td><td class="value">21820045.4</td><td class="value">942615.3</td><td class="value">-</td><td class="value">-</td><td class="value">23.1x</td></tr><tr><td class="label">Last 7 days</td><td class="value">4348680.3</td><td class="value">20055.7</td><td class="value">148.7x</td><td class="value">1.5x</td><td class="value">216.8x</td></tr><tr><td class="label">Last 24 hrs</td><td class="value">557364.2</td><td class="value">2750.8</td><td class="value">138.6x</td><td class="value">1.5x</td><td class="value">202.6x</td></tr></table><div class="note">* Does not include the effects of pre-comp file deletes/truncates</div><h3>Cloud Tier Compression Stats</h3><table><tr><th>Metric</th><th>Pre-Comp GiB</th><th>Post-Comp GiB</th><th>Global-Comp Factor</th><th>Local-Comp Factor</th><th>Total-Comp Factor</th></tr><tr><td class="label">Currently Used</td><td class="value">4802986.5</td><td class="value">515869.3</td><td class="value">-</td><td class="value">-</td><td class="value">9.3x</td></tr><tr><td class="label">Last 7 days</td><td class="value">830056.2</td><td class="value">72556.0</td><td class="value">11.2x</td><td class="value">1.0x</td><td class="value">11.4x</td></tr><tr><td class="label">Last 24 hrs</td><td class="value">33627.8</td><td class="value">1242.6</td><td class="value">18.6x</td><td class="value">1.5x</td><td class="value">27.1x</td></tr></table><div class="note">* Does not include the effects of pre-comp file deletes/truncates</div><h3>Currently Used Summary</h3><table><tr><th>Metric</th><th>Pre-Comp GiB</th><th>Post-Comp GiB</th><th>Global-Comp Factor</th><th>Local-Comp Factor</th><th>Total-Comp Factor</th></tr><tr><td class="label">Active Tier</td><td class="value">21820045.4</td><td class="value">942615.3</td><td class="value">-</td><td class="value">-</td><td class="value">23.1x</td></tr><tr><td class="label">Cloud Tier</td><td class="value">4802986.5</td><td class="value">515869.3</td><td class="value">-</td><td class="value">-</td><td class="value">9.3x</td></tr><tr><td class="label">Total</td><td class="value">26623031.9</td><td class="value">1458484.6</td><td class="value">-</td><td class="value">-</td><td class="value">18.3x</td></tr></table><h3>Mtree List</h3><table><tr><th>Name</th><th>Pre-Comp GiB</th><th>Status</th><th>Ret Lock</th><th>Lock Mode</th><th>Min Period</th><th>Max Period</th><th>Repl Mode</th><th>Repl Host</th><th>Enabled</th></tr><tr><td class="label">/data/col1/backup_daily</td><td class="value">10147121.0</td><td class="value">RW/RLGE</td><td class="value">enabled</td><td class="value">governance</td><td class="value">7days</td><td class="value">36days</td><td class="value">N/A</td><td class="value">N/A</td><td class="value">N/A</td></tr><tr><td class="label">/data/col1/backup_weekly</td><td class="value">4070256.2</td><td class="value">RW/RLGE</td><td class="value">enabled</td><td class="value">governance</td><td class="value">7days</td><td class="value">36days</td><td class="value">N/A</td><td class="value">N/A</td><td class="value">N/A</td></tr><tr><td class="label">/data/col1/backup_monthly</td><td class="value">4008360.0</td><td class="value">RW/RLGE</td><td class="value">enabled</td><td class="value">governance</td><td class="value">7days</td><td class="value">36days</td><td class="value">N/A</td><td class="value">N/A</td><td class="value">N/A</td></tr><tr><td class="label">/data/col1/backup</td><td class="value">0.0</td><td class="value">RW</td><td class="value">disabled</td><td class="value">N/A</td><td class="value">720minutes</td><td class="value">1827days</td><td class="value">N/A</td><td class="value">N/A</td><td class="value">N/A</td></tr><tr><td class="label">/data/col1/ora_atl_daily</td><td class="value">140813.0</td><td class="value">RO/RD/RLGE/ARL</td><td class="value">enabled</td><td class="value">governance</td><td class="value">3days</td><td class="value">32days</td><td class="value">destination</td><td class="value">deatl01</td><td class="value">yes</td></tr><tr><td class="label">/data/col1/ora_atl_monthly</td><td class="value">309856.3</td><td class="value">RO/RD/RLGE/ARL</td><td class="value">enabled</td><td class="value">governance</td><td class="value">3days</td><td class="value">32days</td><td class="value">destination</td><td class="value">deatl01</td><td class="value">yes</td></tr><tr><td class="label">/data/col1/ora_atl_weekly</td><td class="value">333723.2</td><td class="value">RO/RD/RLGE/ARL</td><td class="value">enabled</td><td class="value">governance</td><td class="value">3days</td><td class="value">32days</td><td class="value">destination</td><td class="value">deatl01</td><td class="value">yes</td></tr><tr><td class="label">/data/col1/ora_dfw_daily</td><td class="value">6871.2</td><td class="value">RW/RLGE/ARL</td><td class="value">enabled</td><td class="value">governance</td><td class="value">3days</td><td class="value">32days</td><td class="value">source</td><td class="value">deatl01</td><td class="value">yes</td></tr><tr><td class="label">/data/col1/ora_dfw_monthly</td><td class="value">51607.4</td><td class="value">RW/RLGE/ARL</td><td class="value">enabled</td><td class="value">governance</td><td class="value">3days</td><td class="value">32days</td><td class="value">source</td><td class="value">deatl01</td><td class="value">yes</td></tr><tr><td class="label">/data/col1/ora_dfw_weekly</td><td class="value">11764.8</td><td class="value">RW/RLGE/ARL</td><td class="value">enabled</td><td class="value">governance</td><td class="value">3days</td><td class="value">32days</td><td class="value">source</td><td class="value">deatl01</td><td class="value">yes</td></tr><tr><td class="label">/data/col1/sql_atl_daily</td><td class="value">2698026.0</td><td class="value">RO/RD/RLGE/ARL</td><td class="value">enabled</td><td class="value">governance</td><td class="value">3days</td><td class="value">32days</td><td class="value">destination</td><td class="value">deatl01</td><td class="value">yes</td></tr><tr><td class="label">/data/col1/sql_atl_monthly</td><td class="value">2146276.5</td><td class="value">RO/RD/RLGE/ARL</td><td class="value">enabled</td><td class="value">governance</td><td class="value">3days</td><td class="value">32days</td><td class="value">destination</td><td class="value">deatl01</td><td class="value">yes</td></tr><tr><td class="label">/data/col1/sql_atl_weekly</td><td class="value">1242281.1</td><td class="value">RO/RD/RLGE/ARL</td><td class="value">enabled</td><td class="value">governance</td><td class="value">3days</td><td class="value">32days</td><td class="value">destination</td><td class="value">deatl01</td><td class="value">yes</td></tr><tr><td class="label">/data/col1/sql_dfw_daily</td><td class="value">215941.7</td><td class="value">RW/RLGE/ARL</td><td class="value">enabled</td><td class="value">governance</td><td class="value">3days</td><td class="value">32days</td><td class="value">source</td><td class="value">deatl01</td><td class="value">yes</td></tr><tr><td class="label">/data/col1/sql_dfw_monthly</td><td class="value">744117.9</td><td class="value">RW/RLGE/ARL</td><td class="value">enabled</td><td class="value">governance</td><td class="value">3days</td><td class="value">32days</td><td class="value">source</td><td class="value">deatl01</td><td class="value">yes</td></tr><tr><td class="label">/data/col1/sql_dfw_weekly</td><td class="value">495971.2</td><td class="value">RW/RLGE/ARL</td><td class="value">enabled</td><td class="value">governance</td><td class="value">3days</td><td class="value">32days</td><td class="value">source</td><td class="value">deatl01</td><td class="value">yes</td></tr><tr><td class="label">/data/col1/dr_replica_atl</td><td class="value">0.0</td><td class="value">RO/RD</td><td class="value">disabled</td><td class="value">N/A</td><td class="value">720minutes</td><td class="value">1827days</td><td class="value">destination</td><td class="value">deatl02</td><td class="value">yes</td></tr><tr><td class="label">/data/col1/dr_system_local</td><td class="value">43.8</td><td class="value">RW</td><td class="value">disabled</td><td class="value">N/A</td><td class="value">720minutes</td><td class="value">1827days</td><td class="value">N/A</td><td class="value">N/A</td><td class="value">N/A</td></tr></table><div class="section-header">CLOUD TIER</div><h3>Cloud Profiles</h3><table><tr><th>Profile Name</th><th>Provider</th><th>Endpoint</th><th>Version</th><th>Proxy Host</th><th>Proxy Port</th><th>Proxy Username</th></tr><tr><td class="label">DFW_ECS_Archive_profile</td><td class="value">ecs</td><td class="value">https://ecs-dfw.company.local:443</td><td class="value">3.8.1.6.140266.82870fadfa6</td><td class="value">N/A</td><td class="value">0</td><td class="value">N/A</td></tr><tr><td class="label">DFW_ECS_6month_profile</td><td class="value">ecs</td><td class="value">https://ecs-dfw.company.local</td><td class="value">3.8.1.6.140266.82870fadfa6</td><td class="value">N/A</td><td class="value">0</td><td class="value">N/A</td></tr></table><h3>Cloud Data-Movement Configuration</h3><table><tr><th>Mtree</th><th>Target</th><th>Policy</th><th>Value</th></tr><tr><td class="label">/data/col1/backup_monthly</td><td class="value">Cloud/DFW_ECS_Archive</td><td class="value">app-managed</td><td class="value">enabled</td></tr><tr><td class="label">/data/col1/backup_weekly</td><td class="value">Cloud/DFW_ECS_Archive</td><td class="value">app-managed</td><td class="value">enabled</td></tr><tr><td class="label">/data/col1/backup_daily</td><td class="value">Cloud/DFW_ECS_Archive</td><td class="value">app-managed</td><td class="value">enabled</td></tr><tr><td class="label">/data/col1/sql_dfw_weekly</td><td class="value">Cloud/DFW_ECS_Archive</td><td class="value">age-threshold</td><td class="value">21 days</td></tr><tr><td class="label">/data/col1/sql_dfw_monthly</td><td class="value">Cloud/DFW_ECS_Archive</td><td class="value">age-threshold</td><td class="value">31 days</td></tr><tr><td class="label">/data/col1/ora_dfw_weekly</td><td class="value">Cloud/DFW_ECS_Archive</td><td class="value">age-threshold</td><td class="value">21 days</td></tr><tr><td class="label">/data/col1/ora_dfw_monthly</td><td class="value">Cloud/DFW_ECS_Archive</td><td class="value">age-threshold</td><td class="value">31 days</td></tr></table><h3>Source Information</h3><table><tr><td class="label">SOURCE_FILE</td><td class="value">autosupport</td></tr><tr><td class="label">SOURCE_TAR</td><td class="value">dedfw01-support-bundle-sample.tar.gz</td></tr></table>
+    </div>
+</body>
+</html>

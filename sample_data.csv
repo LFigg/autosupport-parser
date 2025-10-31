@@ -1,0 +1,107 @@
+Field,Value
+GENERATED_ON,Mon Oct 28 14:30:15 CDT 2024
+SYSTEM_SERIALNO,APM01234567890
+DELL_SERVICETAG,DFW1234
+MODEL_NO,DD9900
+HOSTNAME,dedfw01.company.local
+LOCATION,"Dallas Data Center - 123 Main St Dallas TX 75201"
+,
+SERVICES,
+NFS,Enabled
+CIFS,Disabled
+NDMP,Disabled
+CLOUD_TIER,Enabled
+REPLICATION,Enabled
+,
+,
+STORAGE USAGE,
+,
+Active Tier,
+Resource,Size GiB,Used GiB,Avail GiB,Use%,Cleanable GiB
+/data: pre-comp,N/A,21820046.0,N/A,N/A,N/A
+/data: post-comp,1131781.2,942615.2,189166.0,83%,24814.4
+/ddvar,49.1,15.7,30.9,34%,N/A
+/ddvar/core,1215.2,3.3,1150.2,0%,N/A
+Note:,* Estimated based on last cleaning of 2025/10/15 07:05:59.
+,
+Cloud Tier,
+Resource,Size GiB,Used GiB,Avail GiB,Use%,Cleanable GiB
+/data: pre-comp,N/A,4802986.5,N/A,N/A,N/A
+/data: post-comp,744962.4,515869.3,229093.1,69%,7.9
+Note:,* Post-comp size is based on CLOUDTIER-CAPACITY license and might not be same as the cloud storage.
+,
+Total,
+Resource,Size GiB,Used GiB,Avail GiB,Use%,Cleanable GiB
+/data: pre-comp,N/A,26623032.0,N/A,N/A,N/A
+/data: post-comp,1876743.6,1458484.6,418259.0,78%,24822.3
+/ddvar,49.1,15.7,30.9,34%,N/A
+/ddvar/core,1215.2,3.3,1150.2,0%,N/A
+/data: pre-comp,N/A,4802986.5,N/A,N/A,N/A
+/data: post-comp,744962.4,515869.3,229093.1,69%,7.9
+/data: licensed,745058.1,N/A,N/A,N/A,N/A
+Note:,* Total CLOUDTIER-CAPACITY usage can not exceed the CLOUDTIER-CAPACITY license.
+,
+,
+Active Tier Compression Stats,
+Metric,Pre-Comp GiB,Post-Comp GiB,Global-Comp Factor,Local-Comp Factor,Total-Comp Factor
+Currently Used,21820045.4,942615.3,N/A,N/A,23.1x
+Last 7 days,4348680.3,20055.7,148.7x,1.5x,216.8x
+Last 24 hrs,557364.2,2750.8,138.6x,1.5x,202.6x
+Note:,* Does not include the effects of pre-comp file deletes/truncates
+,
+,
+Cloud Tier Compression Stats,
+Metric,Pre-Comp GiB,Post-Comp GiB,Global-Comp Factor,Local-Comp Factor,Total-Comp Factor
+Currently Used,4802986.5,515869.3,N/A,N/A,9.3x
+Last 7 days,830056.2,72556.0,11.2x,1.0x,11.4x
+Last 24 hrs,33627.8,1242.6,18.6x,1.5x,27.1x
+Note:,* Does not include the effects of pre-comp file deletes/truncates
+,
+,
+Currently Used Summary,
+Metric,Pre-Comp GiB,Post-Comp GiB,Global-Comp Factor,Local-Comp Factor,Total-Comp Factor
+Active Tier,21820045.4,942615.3,N/A,N/A,23.1x
+Cloud Tier,4802986.5,515869.3,N/A,N/A,9.3x
+Total,26623031.9,1458484.6,N/A,N/A,18.3x
+,
+,
+Mtree List,
+Name,Pre-Comp GiB,Status,Retention Lock,Lock Mode,Min Retention Period,Max Retention Period,Replication Mode,Replication Host,Replication Enabled
+/data/col1/backup_daily,10147121.0,RW/RLGE,enabled,governance,7days,36days,N/A,N/A,N/A
+/data/col1/backup_weekly,4070256.2,RW/RLGE,enabled,governance,7days,36days,N/A,N/A,N/A
+/data/col1/backup_monthly,4008360.0,RW/RLGE,enabled,governance,7days,36days,N/A,N/A,N/A
+/data/col1/backup,0.0,RW,disabled,N/A,720minutes,1827days,N/A,N/A,N/A
+/data/col1/ora_atl_daily,140813.0,RO/RD/RLGE/ARL,enabled,governance,3days,32days,destination,deatl01,yes
+/data/col1/ora_atl_monthly,309856.3,RO/RD/RLGE/ARL,enabled,governance,3days,32days,destination,deatl01,yes
+/data/col1/ora_atl_weekly,333723.2,RO/RD/RLGE/ARL,enabled,governance,3days,32days,destination,deatl01,yes
+/data/col1/ora_dfw_daily,6871.2,RW/RLGE/ARL,enabled,governance,3days,32days,source,deatl01,yes
+/data/col1/ora_dfw_monthly,51607.4,RW/RLGE/ARL,enabled,governance,3days,32days,source,deatl01,yes
+/data/col1/ora_dfw_weekly,11764.8,RW/RLGE/ARL,enabled,governance,3days,32days,source,deatl01,yes
+/data/col1/sql_atl_daily,2698026.0,RO/RD/RLGE/ARL,enabled,governance,3days,32days,destination,deatl01,yes
+/data/col1/sql_atl_monthly,2146276.5,RO/RD/RLGE/ARL,enabled,governance,3days,32days,destination,deatl01,yes
+/data/col1/sql_atl_weekly,1242281.1,RO/RD/RLGE/ARL,enabled,governance,3days,32days,destination,deatl01,yes
+/data/col1/sql_dfw_daily,215941.7,RW/RLGE/ARL,enabled,governance,3days,32days,source,deatl01,yes
+/data/col1/sql_dfw_monthly,744117.9,RW/RLGE/ARL,enabled,governance,3days,32days,source,deatl01,yes
+/data/col1/sql_dfw_weekly,495971.2,RW/RLGE/ARL,enabled,governance,3days,32days,source,deatl01,yes
+/data/col1/dr_replica_atl,0.0,RO/RD,disabled,N/A,720minutes,1827days,destination,deatl02,yes
+/data/col1/dr_system_local,43.8,RW,disabled,N/A,720minutes,1827days,N/A,N/A,N/A
+,
+CLOUD TIER,
+,
+Cloud Profiles,
+Profile Name,Provider,Endpoint,Version,Proxy Host,Proxy Port,Proxy Username
+DFW_ECS_Archive_profile,ecs,https://ecs-dfw.company.local:443,3.8.1.6.140266.82870fadfa6,N/A,0,N/A
+DFW_ECS_6month_profile,ecs,https://ecs-dfw.company.local,3.8.1.6.140266.82870fadfa6,N/A,0,N/A
+,
+Cloud Data-Movement Configuration,
+Mtree,Target,Policy,Value
+/data/col1/backup_monthly,Cloud/DFW_ECS_Archive,app-managed,enabled
+/data/col1/backup_weekly,Cloud/DFW_ECS_Archive,app-managed,enabled
+/data/col1/backup_daily,Cloud/DFW_ECS_Archive,app-managed,enabled
+/data/col1/sql_dfw_weekly,Cloud/DFW_ECS_Archive,age-threshold,21 days
+/data/col1/sql_dfw_monthly,Cloud/DFW_ECS_Archive,age-threshold,31 days
+/data/col1/ora_dfw_weekly,Cloud/DFW_ECS_Archive,age-threshold,21 days
+/data/col1/ora_dfw_monthly,Cloud/DFW_ECS_Archive,age-threshold,31 days
+,
+SOURCE_FILE,autosupport
+SOURCE_TAR,dedfw01-support-bundle-sample.tar.gz

@@ -1,0 +1,15 @@
+# No external dependencies required
+# This project uses only Python standard library modules:
+# - argparse
+# - csv
+# - datetime
+# - email
+# - os
+# - re
+# - tarfile
+# - tempfile
+# - time
+# - pathlib
+# - typing
+
+# Python 3.8+ required (for improved tarfile.extractall filter support)
