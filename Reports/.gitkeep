@@ -1,0 +1,2 @@
+# This file ensures the Reports directory is tracked by Git
+# This directory is used for storing generated output reports (CSV, HTML)
